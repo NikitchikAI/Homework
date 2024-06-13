@@ -1,0 +1,19 @@
+@startuml
+participant User
+participant System
+
+User -> System: register()
+System -> User: createUser()
+User -> System: login()
+System -> User: authenticate()
+User -> System: addAd()
+System -> AdvertisementRepository: createAd()
+AdvertisementRepository -> System: saveAd()
+System -> User: showAds()
+User -> System: editAd()
+System -> AdvertisementRepository: updateAd()
+System -> User: showAds()
+User -> System: deleteAd()
+System -> AdvertisementRepository: deleteAd()
+
+@enduml

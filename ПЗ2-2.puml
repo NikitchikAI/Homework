@@ -1,0 +1,20 @@
+@startuml
+node "Web Server" as ws {
+  component "Board" as board
+  component "DB" as db
+}
+
+node "Client" as client {
+  actor "User" as user
+}
+
+user -> board: Post Announcement
+board -> db: Save Announcement
+db --> board: Save Successful
+board --> user: Announcement Posted
+
+user -> board: Delete Announcement
+board -> db: Delete Announcement
+db --> board: Delete Successful
+board --> user: Announcement Deleted
+@enduml
