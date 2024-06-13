@@ -1,0 +1,22 @@
+@startuml
+actor User
+
+usecase "Регистрация" as Register
+usecase "Вход" as Login
+usecase "Редактирование профиля" as EditProfile
+usecase "Удаление профиля" as DeleteProfile
+usecase "Добавление объявления" as AddAd
+usecase "Редактирование объявления" as EditAd
+usecase "Удаление объявления" as DeleteAd
+usecase "Просмотр объявлений" as ViewAds
+
+User -- Register
+User -- Login
+User -- EditProfile
+User -- DeleteProfile
+User -- AddAd
+User -- EditAd
+User -- DeleteAd
+User -- ViewAds
+
+@enduml

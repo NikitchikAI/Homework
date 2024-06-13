@@ -1,0 +1,41 @@
+@startuml
+package System {
+  class User {
+    -id: int
+    -name: string
+    -email: string
+    -password: string
+    +register()
+    +login()
+    +editProfile()
+    +deleteProfile()
+  }
+  class Advertisement {
+    -id: int
+    -title: string
+    -description: string
+    -price: decimal
+    -user_id: int
+    +create()
+    +edit()
+    +delete()
+  }
+  class AdvertisementRepository {
+    +getAll()
+    +getById(id: int)
+    +create(ad: Advertisement)
+    +edit(ad: Advertisement)
+    +delete(id: int)
+  }
+  class UserRepository {
+    +getById(id: int)
+    +getByEmail(email: string)
+    +create(user: User)
+    +edit(user: User)
+    +delete(id: int)
+  }
+  User "1" -- "0..*" Advertisement
+  User -- UserRepository
+  Advertisement -- AdvertisementRepository
+}
+@enduml
